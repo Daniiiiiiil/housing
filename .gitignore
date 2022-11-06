@@ -1,0 +1,20 @@
+# ide files
+.vscode
+
+# cache
+__pycache__
+*.pyc
+
+# logs
+*.log
+
+# virtual enviroment
+venv
+
+# database
+*.*sql*
+
+# pictures
+*.png
+*.jpg
+*.jpeg
