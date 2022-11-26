@@ -29,7 +29,6 @@ class Advertisement(models.Model):
     area = models.FloatField("Area (sq.m.)", default=1.0)
     price = models.FloatField("Price (UAH)", default=0)
 
-
     def __str__(self):
         """Returns the string representation of the model"""
         return self.title
