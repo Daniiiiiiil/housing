@@ -1,5 +1,5 @@
 from django.http import HttpRequest, HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Advertisement
 
 
@@ -17,6 +17,6 @@ def advertisements(request: HttpRequest) -> HttpResponse:
 
 def advertisement(request: HttpRequest, advertisement_id: int) -> HttpResponse:
     """Renders specific advertisement by id"""
-    advertisement = Advertisement.objects.get(id=advertisement_id)
+    advertisement = get_object_or_404(Advertisement, id=advertisement_id)
     context = {'advertisement': advertisement}
     return render(request, 'housing_app/advertisement.html', context)
