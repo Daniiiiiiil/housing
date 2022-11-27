@@ -1,0 +1,25 @@
+{% extends "housing_app/base.html" %}
+
+{% block title %}
+  Advertisements
+{% endblock title %}
+
+{% block content %}
+
+  <div>
+    {% for advertisement in advertisements %}
+      <div>
+        <p><b>{{ advertisement.title }}</b></p>
+        <p>{{ advertisement.location }}</p>
+        <p>
+          <span>{{ advertisement.price }} UAH</span>
+          <span>|</span>
+          <span>{{ advertisement.area }} sq.m.</span>
+        </p>
+      </div>
+    {% empty %}
+      <p>No advertisements have been added yet</p>
+    {% endfor %}
+  </div>
+
+{% endblock content %}
