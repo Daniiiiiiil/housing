@@ -5,8 +5,13 @@ app_name = 'housing_app'
 urlpatterns = [
     # Homepage
     path('', views.index, name='index'),
-    # Advertisements
+    # All advertisements page
     path('advertisements/', views.advertisements, name='advertisements'),
-    # New Advertisement
+    # Specific advertisement page
+    path('advertisement/<int:advertisement_id>',
+         views.advertisement,
+         name='advertisement'
+         ),
+    # New advertisement creation page
     # path('', views.index, name='new-advertisement'),
 ]

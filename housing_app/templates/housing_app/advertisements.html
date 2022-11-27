@@ -8,15 +8,17 @@
 
   <div>
     {% for advertisement in advertisements %}
-      <div>
-        <p><b>{{ advertisement.title }}</b></p>
-        <p>{{ advertisement.location }}</p>
-        <p>
-          <span>{{ advertisement.price }} UAH</span>
-          <span>|</span>
-          <span>{{ advertisement.area }} sq.m.</span>
-        </p>
-      </div>
+      <a href="{% url 'housing_app:advertisement' advertisement_id=advertisement.id %}">
+        <div>
+          <p><b>{{ advertisement.title }}</b></p>
+          <p>{{ advertisement.location }}</p>
+          <p>
+            <span>{{ advertisement.price }} UAH</span>
+            <span>|</span>
+            <span>{{ advertisement.area }} sq.m.</span>
+          </p>
+        </div>
+      </a>
     {% empty %}
       <p>No advertisements have been added yet</p>
     {% endfor %}
