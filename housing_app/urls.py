@@ -13,5 +13,8 @@ urlpatterns = [
          name='advertisement'
          ),
     # New advertisement creation page
-    # path('', views.index, name='new-advertisement'),
+    path('new_advertisement/',
+         views.new_advertisement,
+         name='new_advertisement'
+         ),
 ]

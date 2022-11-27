@@ -1,0 +1,19 @@
+{% extends "housing_app/base.html" %}
+
+{% block title %}
+  New Advertisement
+{% endblock title %}
+
+{% block content %}
+
+  <form action="{% url 'housing_app:new_advertisement' %}" method="post">
+    {% csrf_token %}
+
+    <table>
+      {{ form.as_table }}
+    </table>
+
+    <input type="submit" value="Publish Advertisement">
+  </form>
+
+{% endblock content %}
