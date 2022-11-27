@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>{% block title %}{% endblock %}</title>
+  </head>
+
+  <body>
+    <div>
+      <h3>
+        <a href="{% url 'housing_app:index' %}">Home</a>
+      </h3>
+    </div>
+
+    {% block content %}
+    {% endblock %}
+  </body>
+</html>
