@@ -1,24 +1,29 @@
 {% extends "housing_app/base.html" %}
 
-{% block title %}
+{% block tab_title %}
   Advertisements
-{% endblock title %}
+{% endblock tab_title %}
+
+{% block header %}
+  Advertisements
+{% endblock header %}
 
 {% block content %}
 
   <div>
     {% for advertisement in advertisements %}
-      <a href="{% url 'housing_app:advertisement' advertisement_id=advertisement.id %}">
-        <div>
+      <div>
+        <a href="{% url 'housing_app:advertisement' advertisement_id=advertisement.id %}">
           <p><b>{{ advertisement.title }}</b></p>
-          <p>{{ advertisement.location }}</p>
-          <p>
-            <span>{{ advertisement.price }} UAH</span>
-            <span>|</span>
-            <span>{{ advertisement.area }} sq.m.</span>
-          </p>
-        </div>
-      </a>
+        </a>
+        <p>{{ advertisement.location }}</p>
+        <p>
+          <span>{{ advertisement.price }} UAH</span>
+          <span>|</span>
+          <span>{{ advertisement.area }} sq.m.</span>
+        </p>
+      </div>
+      <p>&nbsp;</p>
     {% empty %}
       <p>No advertisements have been added yet</p>
     {% endfor %}

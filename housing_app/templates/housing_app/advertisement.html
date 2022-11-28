@@ -1,13 +1,16 @@
 {% extends "housing_app/base.html" %}
 
-{% block title %}
+{% block tab_title %}
   {{ advertisement.title }}
-{% endblock title %}
+{% endblock tab_title %}
+
+{% block header %}
+  {{ advertisement.title }}
+{% endblock header %}
 
 {% block content %}
 
   <div>
-    <p><b>{{ advertisement.title }}</b></p>
     <p>{{ advertisement.real_estate_type }}</p>
 
     <p>Location: {{ advertisement.location }}</p>
