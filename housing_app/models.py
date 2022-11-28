@@ -1,4 +1,5 @@
 from django.db import models
+from phonenumber_field.modelfields import PhoneNumberField
 
 
 class Advertisement(models.Model):
@@ -20,12 +21,12 @@ class Advertisement(models.Model):
         choices=REAL_ESTATE_TYPE
         )
     location = models.CharField("Location", max_length=50, default="Kyiv")
-    contact_number = models.CharField(
+    contact_number = PhoneNumberField(
         "Contact Number",
         max_length=14,
-        default="+380"
+        blank=False
         )
-    description = models.TextField("Description", max_length=200, blank=True)
+    description = models.TextField("Description", max_length=250, blank=True)
     area = models.FloatField("Area (sq.m.)", default=1.0)
     price = models.FloatField("Price (UAH)", default=0)
 
