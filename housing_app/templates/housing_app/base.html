@@ -6,15 +6,24 @@
   </head>
 
   <body>
-    <div>
-      <h3>
+    <table>
+      <th>
         <a href="{% url 'housing_app:index' %}">Home</a>
-        <span>|</span>
+        &nbsp
         <a href="{% url 'housing_app:advertisements' %}">Advertisements</a>
-        <span>|</span>
+        &nbsp
         <a href="{% url 'housing_app:new_advertisement' %}">New Advertisement</a>
-      </h3>
-    </div>
+
+        &nbsp
+        {% if user.is_authenticated %}
+          <a>Hello, {{ user.username }}</a>
+          &nbsp
+          <a href="{% url 'users:logout' %}">Log Out</a>
+        {% else %}
+          <a href="{% url 'users:login' %}">Log In</a>
+        {% endif %}
+      </th>
+    </table>
 
     <hr/>
 

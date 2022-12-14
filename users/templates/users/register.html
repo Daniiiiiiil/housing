@@ -1,0 +1,22 @@
+{% extends "housing_app/base.html" %}
+
+{% block tab_title %}
+  Register
+{% endblock tab_title %}
+
+{% block header %}
+  Register
+{% endblock header %}
+
+{% block content %}
+  <form action="{% url 'users:register' %}" method="post">
+    {% csrf_token %}
+
+    <table>
+      {{ form.as_table }}
+    </table>
+
+    <input type="submit" value="register">
+    <input type="hidden" name="next" value="{% url 'housing_app:index' %}"/>
+  </form>
+{% endblock content %}
